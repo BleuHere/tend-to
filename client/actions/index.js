@@ -1,18 +1,18 @@
-import { getFruits } from '../apis/fruits'
+import { getEmailById } from '../apis/emails'
 
-export const SET_FRUITS = 'SET_FRUITS'
+export const SET_EMAIL = 'SET_EMAIL'
 
-export function setFruits(fruits) {
+export function setEmail(email) {
   return {
-    type: SET_FRUITS,
-    payload: fruits,
+    type: SET_EMAIL,
+    payload: email,
   }
 }
 
-export function fetchFruits() {
+export function fetchEmail(id) {
   return (dispatch) => {
-    return getFruits().then((fruits) => {
-      dispatch(setFruits(fruits))
+    return getEmailById(id).then((email) => {
+      dispatch(setEmail(email))
     })
   }
 }
