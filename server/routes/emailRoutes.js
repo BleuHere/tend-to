@@ -3,14 +3,12 @@ const express = require('express')
 const router = express.Router()
 
 // eslint-disable-next-line no-unused-vars
-const db = require('../db/db')
+const db = require('../db/emails')
 
-//
 router.get('/:id', (req, res) => {
   let id = 1
   db.getEmailById(id)
     .then((email) => {
-      console.log(email)
       res.json(email)
     })
     .catch((err) => {

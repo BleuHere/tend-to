@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 // the idea with setting the state for the email content is
 // to change the state when a certain goal is reached - for example
@@ -10,12 +11,14 @@ import React from 'react'
 // sends the next one when the condition has been met.
 
 function Email(props) {
+  const email = useSelector((state) => state.emails)
+
   return (
     <div>
-      <h3>Subject: {props.sendNextGuide.subject}</h3>
+      <h3>Subject: {email.subject}</h3>
       <h3>From: naturelover@tend.io</h3>
       <p data-testid="email-text">{`Kia Ora ${props.userName},`}</p>
-      {props.sendNextGuide.text?.split('\n').map((line, i) => (
+      {email.text?.split('\n').map((line, i) => (
         <p key={i}>{line}</p>
       ))}
     </div>

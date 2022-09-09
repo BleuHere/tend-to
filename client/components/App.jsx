@@ -5,13 +5,15 @@ import Email from './Email'
 import Home from './Home'
 // import { Tools } from './Tools'
 
-import { getEmail } from '../apiClient'
+import { getEmailById } from '../apis/emails'
 import { Routes, Route } from 'react-router-dom'
-// import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 // import { fetchFruits } from '../actions'
 
 const App = () => {
+  const dispatch = useDispatch()
+
   const gardenBed = []
 
   // plot state
@@ -31,7 +33,6 @@ const App = () => {
 
   // home username state
   const [name, setName] = useState('')
-  console.log('app', name)
 
   // garden func
   function chopWeeds(id) {
@@ -67,13 +68,18 @@ const App = () => {
   }
 
   // email
+  // useEffect(() => {
+  //   let id = 1
+  //   getEmailById(id)
+  //     .then((res) => {
+  //       setContent(res.body)
+  //     })
+  //     .catch((err) => console.error(err))
+  // }, [])
+
   useEffect(() => {
-    getEmail()
-      .then((res) => {
-        console.log('res', res.body)
-        setContent(res.body)
-      })
-      .catch((err) => console.error(err))
+    let id = 1
+    // dispatch(getEmailById(id))
   }, [])
 
   for (let i = 0; i < 20; i++) {

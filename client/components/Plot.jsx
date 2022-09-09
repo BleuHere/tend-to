@@ -11,7 +11,6 @@ const Plot = (props) => {
         }.png`}
         onDoubleClick={() => props.chopWeeds(props.id)}
         onDragEnter={() => {
-          console.log(props.state.image)
           props.fertilise(props.id)
         }}
         alt={`Illustration of ${props.state.image}`}
