@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { fetchEmail } from '../actions'
 
 const Home = (props) => {
@@ -12,22 +12,16 @@ const Home = (props) => {
     const form = e.target
     const { userName } = form.elements
     props.saveName(userName.value)
-    // dispatch(getEmailById(1))
     navigate('/note-from-a-friend')
     dispatch(fetchEmail(1))
   }
 
   return (
-    <div>
+    <div className="home">
       <form onSubmit={handleSubmit}>
-        <input
-          name="userName"
-          type="text"
-          // value={userName}
-          placeholder="your name here"
-        />
-
-        <input type="submit" />
+        <label htmlFor="userName">Add your name and start the game</label>
+        <input name="userName" id="userName" type="text" />
+        <button type="submit">Start Game</button>
       </form>
     </div>
   )

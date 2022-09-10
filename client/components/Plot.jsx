@@ -1,19 +1,28 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { chopWeeds, fertiliseSoil } from '../actions'
 
 const Plot = (props) => {
+  const dispatch = useDispatch()
+
+  const handleDoubleClick = (id) => {
+    console.log('called')
+    dispatch(chopWeeds(id))
+  }
+
+  const handleDragEnter = (id) => {
+    dispatch(fertiliseSoil(id))
+  }
+
   return (
     <div className="plot">
       <img
-        src={`../images/${props.state.name}${
-          props.state.image <= 3
-            ? Math.ceil(Math.random() * 3)
-            : props.state.image
-        }.png`}
-        onDoubleClick={() => props.chopWeeds(props.id)}
+        src={`../images/${props.name}${props.image}.png`}
+        onDoubleClick={() => handleDoubleClick(props.id)}
         onDragEnter={() => {
-          props.fertilise(props.id)
+          handleDragEnter(props.id)
         }}
-        alt={`Illustration of ${props.state.image}`}
+        alt={`Illustration of ${props.id}`}
       />
     </div>
   )

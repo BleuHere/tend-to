@@ -14,7 +14,7 @@ h1 {
   padding-bottom: 20px;
 }
 
-.garden {
+.container {
   width: 800px;
   display: grid;
   margin: auto;
