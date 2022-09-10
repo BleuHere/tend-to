@@ -1,4 +1,4 @@
-import { CHOP_WEEDS } from '../actions'
+import { CHOP_WEEDS, FERTILISE_SOIL } from '../actions'
 
 const initialState = Array.from({ length: 20 }, (_, id) => ({
   id,
@@ -22,6 +22,20 @@ const reducer = (state = initialState, action) => {
           }
         }),
       ]
+    case FERTILISE_SOIL:
+      return [
+        ...state.map((soilState) => {
+          if (soilState.id === payload && soilState.name === 'soil') {
+            return {
+              ...soilState,
+              name: 'soil',
+              image: 5,
+            }
+          } else {
+            return soilState
+          }
+        }),
+      ]
     default:
       return state
   }
@@ -34,3 +48,9 @@ export default reducer
 //
 
 export const selectPlots = (state) => state.plots
+
+// function fertilise(id) {
+//   setSoilStates(
+//     soilStates
+//   )
+// }

@@ -2,6 +2,7 @@ import { getEmailById } from '../apis/emails'
 
 export const SET_EMAIL = 'SET_EMAIL'
 export const CHOP_WEEDS = 'CHOP_WEEDS'
+export const FERTILISE_SOIL = 'FERTILISE_SOIL'
 
 export function setEmail(email) {
   return {
@@ -18,9 +19,16 @@ export function fetchEmail(id) {
   }
 }
 
-export function chopWeeds(plot) {
+export function chopWeeds(id) {
   return {
     type: CHOP_WEEDS,
-    payload: plot,
+    payload: id,
+  }
+}
+
+export function fertiliseSoil(id) {
+  return {
+    type: FERTILISE_SOIL,
+    payload: id,
   }
 }

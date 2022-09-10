@@ -1,12 +1,6 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { chopWeeds } from '../actions'
-
-// so, dispatch thunk on handleEvent functions instead of in the app
-// thunk will set the state of the plot
-// set up a database?
-// api call
-// route
+import { useDispatch } from 'react-redux'
+import { chopWeeds, fertiliseSoil } from '../actions'
 
 const Plot = (props) => {
   const dispatch = useDispatch()
@@ -16,13 +10,17 @@ const Plot = (props) => {
     dispatch(chopWeeds(id))
   }
 
+  const handleDragEnter = (id) => {
+    dispatch(fertiliseSoil(id))
+  }
+
   return (
     <div className="plot">
       <img
         src={`../images/${props.name}${props.image}.png`}
         onDoubleClick={() => handleDoubleClick(props.id)}
         onDragEnter={() => {
-          props.fertilise(props.id)
+          handleDragEnter(props.id)
         }}
         alt={`Illustration of ${props.id}`}
       />
@@ -31,5 +29,3 @@ const Plot = (props) => {
 }
 
 export default Plot
-
-// Math.ceil(Math.random() * 3)
