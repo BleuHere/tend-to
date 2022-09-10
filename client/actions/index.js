@@ -1,6 +1,7 @@
 import { getEmailById } from '../apis/emails'
 
 export const SET_EMAIL = 'SET_EMAIL'
+export const CHOP_WEEDS = 'CHOP_WEEDS'
 
 export function setEmail(email) {
   return {
@@ -14,5 +15,12 @@ export function fetchEmail(id) {
     return getEmailById(id).then((email) => {
       dispatch(setEmail(email))
     })
+  }
+}
+
+export function chopWeeds(plot) {
+  return {
+    type: CHOP_WEEDS,
+    payload: plot,
   }
 }

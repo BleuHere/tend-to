@@ -9,7 +9,7 @@ A simple level with three phases - garden bed prep, seed sowing and harvest.
 ### Essential Setup
 
 - [x] Create a landing/home page for our user 
-- [ ] Home page needs a button that takes the player to the game
+- [x] Home page needs a button that takes the player to the game
 - [x] Create a garden (grid of divs)
 - [ ] CSS-ify the garden area
 - [ ] Find plant graphics at different phases of growth 
@@ -59,5 +59,7 @@ Now, you get another email - wow! It looks so amazing! Now it's time to harvest.
 
 End of phase three, you get a final email from your friend. More clues as to why they are away, but still vague. 
 
+10/09/22 
+- get Plot working
 
 

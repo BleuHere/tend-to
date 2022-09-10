@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 
-import Plot from './Plot'
+// import Plot from './Plot'
 import Email from './Email'
+import Garden from './Garden'
 import Home from './Home'
 // import { Tools } from './Tools'
 
@@ -14,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux'
 const App = () => {
   const dispatch = useDispatch()
 
-  const gardenBed = []
+  // const gardenBed = []
 
   // plot state
   const [soilStates, setSoilStates] = useState(
@@ -35,21 +36,21 @@ const App = () => {
   const [name, setName] = useState('')
 
   // garden func
-  function chopWeeds(id) {
-    setSoilStates(
-      soilStates.map((soilState) => {
-        if (soilState.id !== id) {
-          return soilState
-        }
-        return {
-          // new thing
-          ...soilState,
-          name: 'soil',
-          image: 4,
-        }
-      })
-    )
-  }
+  // function chopWeeds(id) {
+  //   setSoilStates(
+  //     soilStates.map((soilState) => {
+  //       if (soilState.id !== id) {
+  //         return soilState
+  //       }
+  //       return {
+  //         // new thing
+  //         ...soilState,
+  //         name: 'soil',
+  //         image: 4,
+  //       }
+  //     })
+  //   )
+  // }
   // garden func
   function fertilise(id) {
     setSoilStates(
@@ -77,22 +78,22 @@ const App = () => {
   //     .catch((err) => console.error(err))
   // }, [])
 
-  useEffect(() => {
-    let id = 1
-    // dispatch(getEmailById(id))
-  }, [])
+  // useEffect(() => {
+  //   let id = 1
+  //   // dispatch(getEmailById(id))
+  // }, [])
 
-  for (let i = 0; i < 20; i++) {
-    gardenBed.push(
-      <Plot
-        id={i}
-        key={i}
-        state={soilStates[i]}
-        chopWeeds={chopWeeds}
-        fertilise={fertilise}
-      />
-    )
-  }
+  // for (let i = 0; i < 20; i++) {
+  //   gardenBed.push(
+  //     <Plot
+  //       id={i}
+  //       key={i}
+  //       state={soilStates[i]}
+  //       // chopWeeds={chopWeeds}
+  //       fertilise={fertilise}
+  //     />
+  //   )
+  // }
 
   return (
     <>
@@ -103,15 +104,7 @@ const App = () => {
           path="/note-from-a-friend"
           element={<Email sendNextGuide={content} userName={name} />}
         />
-        <Route
-          path="/garden"
-          element={
-            <div className="container">
-              {visible && <div className="garden">{gardenBed}</div>}
-              {/* <Tools /> */}
-            </div>
-          }
-        />
+        <Route path="/garden" element={<Garden />} />
       </Routes>
     </>
   )
