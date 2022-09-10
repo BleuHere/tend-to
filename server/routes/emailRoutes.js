@@ -6,8 +6,7 @@ const router = express.Router()
 const db = require('../db/emails')
 
 router.get('/:id', (req, res) => {
-  let id = 1
-  db.getEmailById(id)
+  db.getEmailById(req.params.id)
     .then((email) => {
       res.json(email)
     })
