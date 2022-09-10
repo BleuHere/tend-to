@@ -6,7 +6,6 @@ const Plot = (props) => {
   const dispatch = useDispatch()
 
   const handleDoubleClick = (id) => {
-    console.log('called')
     dispatch(chopWeeds(id))
   }
 

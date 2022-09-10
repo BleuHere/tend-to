@@ -1,6 +1,9 @@
 import React from 'react'
-import Plot from './Plot'
 import { useSelector } from 'react-redux'
+
+import Plot from './Plot'
+import { Tools } from './Tools'
+
 import { selectPlots } from '../reducers/plots'
 
 const Garden = () => {
@@ -8,9 +11,12 @@ const Garden = () => {
 
   return (
     <div className="container">
-      {plots.map((plot) => (
-        <Plot key={plot.id} {...plot} />
-      ))}
+      <div className="garden">
+        {plots.map((plot) => (
+          <Plot key={plot.id} {...plot} />
+        ))}
+      </div>
+      <Tools />
     </div>
   )
 }
