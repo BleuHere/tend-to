@@ -1,13 +1,23 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 import Plot from './Plot'
 import { Tools } from './Tools'
 
 import { selectPlots } from '../reducers/plots'
+import { fetchEmail } from '../actions'
 
 const Garden = () => {
   const plots = useSelector(selectPlots)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  if (plots.filter((plot) => plot.image === 4).length === 20) {
+    // save state of plots for next round
+    navigate('/note-from-a-friend/2')
+    dispatch(fetchEmail(2))
+  }
 
   return (
     <div className="container">

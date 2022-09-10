@@ -3,6 +3,14 @@ import { getEmailById } from '../apis/emails'
 export const SET_EMAIL = 'SET_EMAIL'
 export const CHOP_WEEDS = 'CHOP_WEEDS'
 export const FERTILISE_SOIL = 'FERTILISE_SOIL'
+export const SET_USERNAME = 'SET_USERNAME'
+
+export function setUserName(userName) {
+  return {
+    type: SET_USERNAME,
+    payload: userName,
+  }
+}
 
 export function setEmail(email) {
   return {
