@@ -1,6 +1,6 @@
 import { CHOP_WEEDS, FERTILISE_SOIL, SAVE_P_ONE } from '../actions'
 
-const initialState = Array.from({ length: 20 }, (_, id) => ({
+const initialState = Array.from({ length: 12 }, (_, id) => ({
   id,
   name: 'weed',
   image: Math.ceil(Math.random() * 3),
@@ -58,9 +58,3 @@ export default reducer
 //
 
 export const selectPlots = (state) => state.plots
-
-// function fertilise(id) {
-//   setSoilStates(
-//     soilStates
-//   )
-// }

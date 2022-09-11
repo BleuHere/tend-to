@@ -19,9 +19,12 @@ const Home = () => {
   return (
     <div className="home">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="userName">Add your name and start the game</label>
-        <input name="userName" id="userName" type="text" />
-        <button type="submit">Start Game</button>
+        <label htmlFor="userName">Add your name </label>
+        <br />
+        <input name="userName" id="userName" type="text" /> <br />
+        <button className="submit" type="submit">
+          Start Game
+        </button>
       </form>
     </div>
   )

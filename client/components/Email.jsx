@@ -14,8 +14,6 @@ function Email() {
   const userName = useSelector(selectUserName)
   const plots = useSelector(selectPlots)
 
-  console.log(userName)
-
   useEffect(() => dispatch(fetchEmail(id)), [])
 
   function handleClick() {
@@ -25,17 +23,23 @@ function Email() {
   }
 
   return (
-    <div>
-      <h3>Subject: {email.subject}</h3>
-      <h3>From: naturelover@tend.io</h3>
-      <p data-testid="email-text">{`Kia Ora ${userName.userName},`}</p>
-      {email.text?.split('\n').map((line, i) => (
-        <p key={i}>{line}</p>
-      ))}
+    <>
+      <div className="email">
+        <h3>Subject: {email.subject}</h3>
+        <h3>From: naturelover@tend.io</h3>
+        <div className="email-text">
+          <p data-testid="email-text">{`Kia Ora ${userName.userName},`}</p>
+          {email.text?.split('\n').map((line, i) => (
+            <p key={i}>{line}</p>
+          ))}
+        </div>
+      </div>
       <Link to="/garden">
-        <button onClick={handleClick}>Play</button>
+        <button className="email-button" onClick={handleClick}>
+          Play
+        </button>
       </Link>
-    </div>
+    </>
   )
 }
 

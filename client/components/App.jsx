@@ -9,7 +9,7 @@ import Home from './Home'
 const App = () => {
   return (
     <>
-      <h1>Tend Gardening Game</h1>
+      <h1>Tend</h1>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/note-from-a-friend/:id" element={<Email />} />

@@ -16,6 +16,10 @@ exports.seed = async function (knex) {
       subject: 'Amazing job! Now to fertilise',
       text: "Wow, that looks amazing. Thank you. \n Next you'll need to add compost to the garden. Compost is an earth-friendly way to reuse garden and kitchen waste, and it gives life to our soil. \n Drag along the plots to disperse the compost. \n Kindest, \n Your Friend",
     },
-    { id: 3, subject: 'hello again', text: 'hello again' },
+    {
+      id: 3,
+      subject: "That's all for this demo",
+      text: 'Thanks for fertilising the garden. Now the developer needs to build you more tasks! \n Kindest, \n Bleu',
+    },
   ])
 }

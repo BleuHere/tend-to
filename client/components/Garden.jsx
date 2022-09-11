@@ -13,9 +13,14 @@ const Garden = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
-  if (plots.filter((plot) => plot.image === 4).length === 20) {
+  if (plots.filter((plot) => plot.image === 4).length === 12) {
     navigate('/note-from-a-friend/2')
     dispatch(fetchEmail(2))
+  }
+
+  if (plots.filter((plot) => plot.image === 5).length === 12) {
+    navigate('/note-from-a-friend/3')
+    dispatch(fetchEmail(3))
   }
 
   return (
@@ -25,7 +30,7 @@ const Garden = () => {
           <Plot key={plot.id} {...plot} />
         ))}
       </div>
-      <Tools />
+      {/* <Tools /> */}
     </div>
   )
 }
