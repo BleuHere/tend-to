@@ -6,7 +6,7 @@ import Plot from './Plot'
 import { Tools } from './Tools'
 
 import { selectPlots } from '../reducers/plots'
-import { fetchEmail } from '../actions'
+import { fetchEmail, savePhaseOne } from '../actions'
 
 const Garden = () => {
   const plots = useSelector(selectPlots)
@@ -14,7 +14,6 @@ const Garden = () => {
   const dispatch = useDispatch()
 
   if (plots.filter((plot) => plot.image === 4).length === 20) {
-    // save state of plots for next round
     navigate('/note-from-a-friend/2')
     dispatch(fetchEmail(2))
   }

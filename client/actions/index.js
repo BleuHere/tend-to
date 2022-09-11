@@ -4,6 +4,7 @@ export const SET_EMAIL = 'SET_EMAIL'
 export const CHOP_WEEDS = 'CHOP_WEEDS'
 export const FERTILISE_SOIL = 'FERTILISE_SOIL'
 export const SET_USERNAME = 'SET_USERNAME'
+export const SAVE_P_ONE = 'SAVE_P_ONE'
 
 export function setUserName(userName) {
   return {
@@ -38,5 +39,12 @@ export function fertiliseSoil(id) {
   return {
     type: FERTILISE_SOIL,
     payload: id,
+  }
+}
+
+export function savePhaseOne(plots) {
+  return {
+    type: SAVE_P_ONE,
+    payload: plots,
   }
 }

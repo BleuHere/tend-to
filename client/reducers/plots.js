@@ -1,4 +1,4 @@
-import { CHOP_WEEDS, FERTILISE_SOIL } from '../actions'
+import { CHOP_WEEDS, FERTILISE_SOIL, SAVE_P_ONE } from '../actions'
 
 const initialState = Array.from({ length: 20 }, (_, id) => ({
   id,
@@ -33,6 +33,16 @@ const reducer = (state = initialState, action) => {
             }
           } else {
             return soilState
+          }
+        }),
+      ]
+    case SAVE_P_ONE:
+      return [
+        ...state.forEach((plot) => {
+          return {
+            ...plot,
+            name: 'soil',
+            image: 4,
           }
         }),
       ]
