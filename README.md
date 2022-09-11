@@ -27,7 +27,7 @@ The email guides us to the first phase - clearing the weedy, poor soil quality v
 
 - [x] Event handler on each div - double click removes weeds
 - [ ] Reward for clearing weeds - you find a weeding tool that's really efficient and you can now clear two divs (if next to each other) - not essential MVP
-- [ ] When all divs are 'clean' state, phase pauses. Email is shown 
+- [x] When all divs are 'clean' state, phase pauses. Email is shown 
 - [x] Add compost (dragover) - change state to 'fertilised'
 - [ ] Add draggable compost receptical
 
