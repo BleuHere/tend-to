@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
 import Plot from './Plot'
-import { Tools } from './Tools'
+import Score from './Score'
+// import { Tools } from './Tools'
 
 import { selectPlots } from '../reducers/plots'
-import { fetchEmail, savePhaseOne } from '../actions'
+import { fetchEmail } from '../actions'
 
 const Garden = () => {
   const plots = useSelector(selectPlots)
@@ -25,6 +26,7 @@ const Garden = () => {
 
   return (
     <div className="container">
+      <Score />
       <div className="garden">
         {plots.map((plot) => (
           <Plot key={plot.id} {...plot} />

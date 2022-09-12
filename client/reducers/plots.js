@@ -24,15 +24,15 @@ const reducer = (state = initialState, action) => {
       ]
     case FERTILISE_SOIL:
       return [
-        ...state.map((soilState) => {
-          if (soilState.id === payload && soilState.name === 'soil') {
+        ...state.map((plot) => {
+          if (plot.id === payload && plot.name === 'soil') {
             return {
-              ...soilState,
+              ...plot,
               name: 'soil',
               image: 5,
             }
           } else {
-            return soilState
+            return plot
           }
         }),
       ]
